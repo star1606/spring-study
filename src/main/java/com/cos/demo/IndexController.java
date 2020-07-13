@@ -1,7 +1,8 @@
 package com.cos.demo;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.json.GsonJsonParser;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -78,8 +79,16 @@ public class IndexController {
 		System.out.println(user.getEmail());    
 	
 		return user; // ViewResolver 작동금지 => Jackson 작동.
+		// Jackson은 오브젝트가 리턴할 때만 작동
 						
 		
 	}
+	
+	@GetMapping("/index")
+	public String home() {
+		return "index";	
+	}
+	
+	
 	
 }
